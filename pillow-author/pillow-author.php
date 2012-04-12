@@ -32,6 +32,8 @@ License:
   
 */
 
+include( plugin_dir_path(__FILE__) . 'inc.encode_link.php' );
+
 class IS_Pillow_Author {
     private $base_url;
     private $base_path;
@@ -136,5 +138,4 @@ class IS_Pillow_Author {
     	}
     }
 }
-
 $is_pillow_author = new IS_Pillow_Author;

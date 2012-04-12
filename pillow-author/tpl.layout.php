@@ -12,7 +12,14 @@
     <p><?php the_author_meta('description'); ?></p>
     <?php endif; ?>
     <?php if (get_the_author_meta( 'user_url' ) != "" ) : ?>
-    <p><a href="<?php the_author_meta('user_url'); ?>" target="_blank">Website</a></p>
+    <p><?php 
+    	
+    	echo IS_Pillow_Author_URL_Encoder::encodelink( 'mailto:' . get_the_author_meta( 'email' ), 'Email Me!' );
+    	
+    	if (get_the_author_meta( 'description' ) != "" ) : ?>
+    	| <a href="<?php the_author_meta('user_url'); ?>" target="_blank">Website</a>
+    	<?php endif; ?>
+    </p>
     <?php endif; ?>
     <ul class="social_network">
     	<?php foreach( $this->networks as $network ) : if (get_the_author_meta( $network ) == "" ) continue; ?>
