@@ -4,7 +4,7 @@
 Plugin Name: Pillow Author
 Plugin URI: 
 Description: Embed your individual author information within the post as a pillow ad (single posts only)
-Version: 1.0
+Version: 1.4
 Author: Timothy Wood (@codearachnid)
 Author URI: http://www.codearachnid.com	
 Author Email: tim@imaginesimplicity.com
