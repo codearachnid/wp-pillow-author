@@ -58,7 +58,7 @@
     <h5>Related Posts by <?php the_author(); ?></h5>
 	<ul class="related_posts">
 		<?php foreach ($related_posts as $related_post ) : ?>
-		<li><a href="<?php echo get_permalink( $related_post->ID ); ?>"><?php echo apply_filters( 'the_title', $related_post->post_title, $related_post->ID ); ?></a></li>
+		<li><a href="<?php echo get_permalink( $related_post->ID ); ?>" rel="dofollow"><?php echo apply_filters( 'the_title', $related_post->post_title, $related_post->ID ); ?></a></li>
 		<?php endforeach; ?>
 	</ul>
 	<?php endif; endif; ?>
