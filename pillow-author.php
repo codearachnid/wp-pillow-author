@@ -4,7 +4,7 @@
 Plugin Name: Pillow Author
 Plugin URI: 
 Description: Embed your individual author information within the post as a pillow ad (single posts only)
-Version: 1.4
+Version: 1.5
 Author: Timothy Wood (@codearachnid)
 Author URI: http://www.codearachnid.com	
 Author Email: tim@imaginesimplicity.com
@@ -198,6 +198,15 @@ class IS_Pillow_Author {
     function front($content){
     	global $post;
 		$this->settings = get_option('is_pillow_author_options');
+		
+		// setup user list to exclude from showing
+		$this->settings['exclude_users'] = isset( $this->settings['exclude_users'] ) ? array_map('trim', explode( ",", $this->settings['exclude_users'] ) ) : array();
+
+		// if user is to be exclude return content immediately
+		if( in_array( get_the_author_meta( 'user_login' ), $this->settings['exclude_users'] ) ) {
+			return $content;
+		}
+		
     	// TODO allow user defined custom post types
     	// http://codex.wordpress.org/Function_Reference/get_post_types
 	    if ( $post && in_array( $post->post_type, $this->filter_types ) ) {

@@ -2,8 +2,8 @@
 	
 	<!-- Display Plugin Icon, Header, and Description -->
 	<div class="icon32" id="icon-options-general"><br></div>
-	<h2>Plugin Options Starter Kit</h2>
-	<p>Below is a collection of sample controls you can use in your own Plugins. Or, you can analyse the code and learn how all the most common controls can be added to a Plugin options form. See the code for more details, it is fully commented.</p>
+	<h2>WordPress Pillow Author</h2>
+	<p>Configure the Pillow Author plugin display and functionality.</p>
 
 	<!-- Beginning of the Plugin Options Form -->
 	<form method="post" action="options.php">
@@ -24,7 +24,7 @@
 						<option value='4' <?php selected('4', $options['show_after']); ?>>Fourth</option>
 						<option value='-1' <?php selected('-1', $options['show_after']); ?>>Bottom of Content</option>
 					</select>
-					<span style="color:#666666;margin-left:10px;">Add a comment here to explain more about how to use the option above</span>
+					<span style="color:#666666;margin-left:10px;">Select where you want the author box to show in relation to the content</span>
 				</td>
 			</tr>
 			<tr>
@@ -73,20 +73,20 @@
 						<option value='4' <?php selected('4', $options['related_posts']); ?>>Four</option>
 						<option value='5' <?php selected('5', $options['related_posts']); ?>>Five</option>
 					</select>
-					<span style="color:#666666;margin-left:10px;">Add a comment here to explain more about how to use the option above</span>
+					<span style="color:#666666;margin-left:10px;">To disable from displaying select "None"</span>
 				</td>
 			</tr>
 			<tr>
 				<th scope="row">Custom CSS</th>
 				<td>
-					<textarea name="is_pillow_author_options[custom_css]" rows="7" cols="75" type='textarea'><?php echo $options['custom_css']; ?></textarea><br /><span style="color:#666666;margin-left:10px;">Add a comment here to give extra information to Plugin users</span>
+					<textarea name="is_pillow_author_options[custom_css]" rows="7" cols="75" type='textarea'><?php echo $options['custom_css']; ?></textarea><br /><span style="color:#666666;margin-left:10px;">Override the default CSS for this plugin or add new styles.</span>
 				</td>
 			</tr>
 			<tr>
 				<th scope="row">Exclude users</th>
 				<td>
-					<input type="text" size="40" name="is_pillow_author_options[exclude_users]" value="<?php echo $options['exclude_users']; ?>" />
-					<span style="color:#666666;margin-left:10px;">Add a comment here to explain more about how to use the option above</span>
+					<input type="text" size="40" name="is_pillow_author_options[exclude_users]" value="<?php echo $options['exclude_users']; ?>" /><br />
+					<span style="color:#666666;margin-left:10px;">If you do not want an author to show the author box add their username (comma delimited) to be excluded</span>
 				</td>
 			</tr>
 			<tr>
